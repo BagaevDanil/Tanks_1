@@ -53,7 +53,7 @@ void game(RenderWindow& window)
     bool isWinGame = false;
 
     int numEnemy = 10;
-    float currentSpawnEnemy = 500;
+    float currentSpawnEnemy = 300;
 
     Font font;
     font.loadFromFile("Sprites/PixeloidMono.ttf");
@@ -108,7 +108,7 @@ void game(RenderWindow& window)
         if (currentSpawnEnemy <= 0 && numEnemy > 0)
         {
             vectorEnemy.push_back(new Enemy("Sprites/tanks/v5.bmp", 400, 400, 32, 32));
-            currentSpawnEnemy= 200;
+            currentSpawnEnemy = ((rand() % 4) + 1) * 50; //50 100 150 200
             numEnemy--;
         }
 
